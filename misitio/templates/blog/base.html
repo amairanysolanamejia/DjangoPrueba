@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="{% static 'css/materialize.css' %}">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+	<title>{% block titulo %} {% endblock %}</title>
+</head>
+<body>
+	<!--Inicio de barra de navegación-->
+	<nav class="teal accent-4">
+		<div class="nav-wrapper">
+			<a href="#!" class="brand-logo">Helados Gigantes</a>
+			<a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+			<ul class="right hide-on-med-and-down">
+				<li><a href="#">Inicio</a></li>
+				<li><a href="#">Ver publicaciones</a></li>
+				<li><a href="#">¿Quiénes somos?</a></li>
+			</ul>
+		</div>
+	</nav>
+	<ul class="sidenav" id="mobile-demo">
+			<li><a href="#">Inicio</a></li>
+			<li><a href="#">Ver publicaciones</a></li>
+			<li><a href="#">¿Quiénes somos?</a></li>
+	</ul>
+	<!--Fin de barra de navegación-->
+<main>
+	{% block content %}
+
+	{% endblock %}
+</main>
+<!--Inicio del footer-->
+        <footer class="page-footer teal accent-4 ">
+          <div class="footer-copyright">
+            <div class="container">
+            © 2018 PROTECO Curso de Django 
+            <a class="grey-text text-lighten-4 right" href="http://www.proteco.mx">Ver más cursos</a>
+            </div>
+          </div>
+        </footer>
+            
+<!--Fin del footer-->
+	
+</body>
+<script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+<script src="{% static 'js/materialize.min.js' %}"></script>
+<script src="{% static 'js/app.js' %}"></script>
+
+</html>
