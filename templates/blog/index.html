@@ -1,0 +1,20 @@
+{% extends 'blog/base.html' %}
+
+{% block titulo %}
+	Inicio
+{% endblock %}
+
+
+{% block content %}
+
+
+{% if user.is_authenticated %}
+  Hi {{ user.username }}!
+  <p><a href="{% url 'logout' %}">logout</a></p>
+  <p><a href="{% url 'password_reset' %}">reset password</a></p>
+{% else %}
+  <p>No estás registrado, inicia sesión</p>
+  <a href="{% url 'login' %}">login</a>
+{% endif %}
+
+{% endblock %}
